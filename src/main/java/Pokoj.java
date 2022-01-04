@@ -32,4 +32,8 @@ public class Pokoj {
     }
 
     public void zwolnijPokoj() { dostepnosc = true;}
+
+    public boolean isDostepnosc() {
+        return dostepnosc;
+    }
 }
