@@ -49,8 +49,9 @@ public class Rezerwacja {
         else
             return true;
     }
-    public Rezerwacja(DaneRezerwacji daneRezerwacji, Klient daneKlienta) {
+    public Rezerwacja(DaneRezerwacji daneRezerwacji, Klient daneKlienta, int IDRezerwacji) {
         this.daneRezerwacji = daneRezerwacji;
         this.klient = daneKlienta;
+        this.IDRezerwacji=IDRezerwacji;
     }
 }

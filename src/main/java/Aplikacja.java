@@ -3,8 +3,8 @@ import java.util.Iterator;
 
 public class Aplikacja {
 
-private static ArrayList<Rezerwacja> listaRezerwacji;
-private static ArrayList<Hotel> listaHoteli;
+private static ArrayList<Rezerwacja> listaRezerwacji = new ArrayList<>();
+private static ArrayList<Hotel> listaHoteli = new ArrayList<>();
 
     public static ArrayList<Rezerwacja> getRezerwacje()
     {
@@ -16,10 +16,10 @@ private static ArrayList<Hotel> listaHoteli;
         listaRezerwacji=listaRezerwacjiNowa;
     }
 
-    public static void dodajRezerwację(int ilośćDni, int ilośćOsób, String początekPobytu, ArrayList<Pokoj> wybranePokoje, String imię, String nazwisko, String numerDowodu){
-        DaneRezerwacji daneRezerwacji = new DaneRezerwacji(ilośćDni,ilośćOsób,początekPobytu,wybranePokoje);
-        Klient daneKlienta = new Klient(imię,nazwisko,numerDowodu);
-        Rezerwacja rezerwacja = new Rezerwacja(daneRezerwacji,daneKlienta);
+    public static void dodajRezerwację(int iloscDni, int iloscOsob, String poczatekPobytu, ArrayList<Pokoj> wybranePokoje, String imie, String nazwisko, String numerDowodu){
+        DaneRezerwacji daneRezerwacji = new DaneRezerwacji(iloscDni,iloscOsob,poczatekPobytu,wybranePokoje);
+        Klient daneKlienta = new Klient(imie,nazwisko,numerDowodu);
+        Rezerwacja rezerwacja = new Rezerwacja(daneRezerwacji,daneKlienta,listaRezerwacji.size());
         listaRezerwacji.add(rezerwacja);
     }
     public static void zmienTermin(String nowyTermin, int IDRezerwacji){
@@ -29,7 +29,7 @@ private static ArrayList<Hotel> listaHoteli;
         }
     }
 
-    public void anulujRezerwacje(int IDRezerwacji)
+    public static void anulujRezerwacje(int IDRezerwacji)
     {
         if(szukajRezerwacji(IDRezerwacji) != null)
         {

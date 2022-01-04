@@ -1,7 +1,7 @@
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class pokojTest {
 
@@ -17,12 +17,12 @@ public class pokojTest {
     @Test
     public void testZajmijPokoj(){
         pokoj.zajmijPokoj();
-        assertEquals(false,pokoj.isDostepnosc());
+        assertFalse(pokoj.isDostepnosc());
     }
 
     @Test
     public void testZwolnijPokoj(){
         pokoj.zwolnijPokoj();
-        assertEquals(true,pokoj.isDostepnosc());
+        assertTrue(pokoj.isDostepnosc());
     }
 }
